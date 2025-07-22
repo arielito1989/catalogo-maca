@@ -1,0 +1,30 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&family=Playfair+Display:wght@700&display=swap');
+
+:root {
+  --font-primary: 'Playfair Display', serif;
+  --font-secondary: 'Montserrat', sans-serif;
+
+  --primary-color: #E6A4B4;
+  --secondary-color: #D4AF37;
+  --background-color: #FFF8F0;
+  --text-color: #4B3F3F;
+  --card-bg-color: #FFFFFF;
+  --footer-bg-color: #F7DED0;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-secondary);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: var(--background-color);
+  color: var(--text-color);
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-primary);
+}
+
+.App {
+  text-align: center;
+}

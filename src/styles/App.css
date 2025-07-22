@@ -1,0 +1,39 @@
+:root {
+  --primary-color: #f8d7da; /* Rosa pálido */
+  --secondary-color: #fcf8e3; /* Crema */
+  --accent-color: #e83e8c; /* Rosa vibrante para acentos */
+  --text-color: #333;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: var(--secondary-color);
+}
+
+.navbar-brand {
+  font-weight: bold;
+}
+
+.btn-primary {
+  background-color: var(--accent-color);
+  border-color: var(--accent-color);
+}
+
+.btn-primary:hover {
+  background-color: #d9367a;
+  border-color: #d9367a;
+}
+
+.card {
+  border: none;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+#reviews {
+  background-color: white;
+  padding: 4rem 0;
+}
+
+footer {
+  background-color: var(--primary-color) !important;
+}

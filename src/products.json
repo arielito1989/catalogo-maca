@@ -1,0 +1,38 @@
+[
+  {
+    "name": "Torta de Chocolate",
+    "description": "Deliciosa torta de chocolate con relleno de manjar.",
+    "price": "$15.000",
+    "image": "torta1.webp"
+  },
+  {
+    "name": "Cupcakes de Vainilla",
+    "description": "Esponjososos cupcakes de vainilla con frosting de colores.",
+    "price": "$2.000 c/u",
+    "image": "torta2.webp"
+  },
+  {
+    "name": "Galletas de Avena",
+    "description": "Galletas crujientes y saludables de avena con pasas.",
+    "price": "$500 c/u",
+    "image": "cookies1.webp"
+  },
+  {
+    "name": "Budin de Limon",
+    "description": "Budin de limon con glaseado.",
+    "price": "$3.000",
+    "image": "budin1.webp"
+  },
+  {
+    "name": "Pan Dulce",
+    "description": "Pan dulce con frutas abrillantadas y frutos secos.",
+    "price": "$5.000",
+    "image": "pandulce1.webp"
+  },
+  {
+    "name": "Tarta de Frutilla",
+    "description": "Tarta de frutilla con crema pastelera.",
+    "price": "$10.000",
+    "image": "tarta1.webp"
+  }
+]
