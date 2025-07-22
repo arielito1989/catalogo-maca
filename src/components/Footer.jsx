@@ -2,6 +2,7 @@
 import React from 'react';
 import { Container, Row, Col } from 'react-bootstrap';
 import { FaInstagram, FaWhatsapp } from 'react-icons/fa';
+import logo from '../assets/images/logo.svg';
 import '../styles/Footer.css';
 
 const Footer = () => {
@@ -10,25 +11,36 @@ const Footer = () => {
 
   return (
     <footer id="footer" className="footer-section">
-      <Container>
-        <Row className="align-items-center">
-          <Col md={4} className="text-center text-md-start mb-3 mb-md-0">
-            <h5 className="footer-title">Dulces Maquialex</h5>
+      <Container fluid className="footer-container">
+        <Row className="footer-row">
+          {/* Columna de la Marca */}
+          <Col md={4} className="footer-column brand-column">
+            <div className="footer-brand">
+              <img src={logo} alt="Dulces Maquialex Logo" className="footer-logo" />
+              <h4 className="footer-title">Dulces Maquialex</h4>
+            </div>
             <p className="footer-subtitle">Endulzando tus momentos</p>
           </Col>
-          <Col md={4} className="text-center mb-3 mb-md-0">
+
+          {/* Columna de Redes Sociales */}
+          <Col md={4} className="footer-column social-column">
+            <h5 className="footer-heading">Contacto y Redes</h5>
             <div className="social-icons">
-              <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer" className="social-icon">
+              <a href="https://www.instagram.com/stories/dulces_maquialex/" target="_blank" rel="noopener noreferrer" className="social-icon instagram">
                 <FaInstagram />
               </a>
-              <a href={whatsappUrl} target="_blank" rel="noopener noreferrer" className="social-icon">
+              <a href={whatsappUrl} target="_blank" rel="noopener noreferrer" className="social-icon whatsapp">
                 <FaWhatsapp />
               </a>
             </div>
           </Col>
-          <Col md={4} className="text-center text-md-end">
+
+          {/* Columna de Copyright */}
+          <Col md={4} className="footer-column copyright-column">
             <p className="footer-copyright">
-              &copy; 2025 Ariel Nogueroles. Todos los derechos reservados.
+              &copy; 2025 <span className="copyright-name">Ariel Nogueroles</span>.
+              <br />
+              Todos los derechos reservados.
             </p>
           </Col>
         </Row>

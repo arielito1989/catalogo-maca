@@ -1,61 +1,47 @@
-
 .review-form-card {
-  background-color: rgba(255, 255, 255, 0.05);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  background-color: #ffffff;
   border-radius: 15px;
+  border: none;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
   padding: 2rem;
-  color: white;
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-}
-
-.review-form-card .card-title {
-  color: var(--primary-color);
-  font-family: var(--font-primary);
-  font-weight: bold;
-}
-
-.review-form-card .form-label {
-  color: rgba(255, 255, 255, 0.8);
-}
-
-.review-form-card .form-control {
-  background-color: rgba(0, 0, 0, 0.2);
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  color: white;
-  border-radius: 8px;
-}
-
-.review-form-card .form-control:focus {
-  background-color: rgba(0, 0, 0, 0.3);
-  border-color: var(--primary-color);
-  box-shadow: 0 0 0 0.2rem rgba(230, 164, 154, 0.25);
-  color: white;
-}
-
-.review-form-card .form-control::placeholder {
-  color: rgba(255, 255, 255, 0.4);
 }
 
 .star-rating {
   display: flex;
-  justify-content: flex-start;
   gap: 5px;
+  margin-bottom: 1rem;
 }
 
-.star-rating .star {
+.star {
   cursor: pointer;
-  transition: color 0.2s ease-in-out;
+  transition: color 0.2s ease;
 }
 
 .submit-review-btn {
-  background-color: var(--primary-color);
-  border-color: var(--primary-color);
-  font-weight: bold;
-  transition: background-color 0.2s, border-color 0.2s;
+  background-color: #E5A4B4;
+  border-color: #E5A4B4;
+  color: #FFFFFF;
+  padding: 10px 20px;
+  font-weight: 700;
+  border-radius: 50px;
+  transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
 .submit-review-btn:hover {
-  background-color: #d98d7e; /* Un tono más oscuro de --primary-color */
-  border-color: #d98d7e;
+  background-color: #D493A3;
+  border-color: #D493A3;
+  transform: translateY(-2px);
+}
+
+.submission-success-message {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 1rem;
+  margin-top: 1.5rem;
+  background-color: #E6F9F0;
+  color: #28A745;
+  border-radius: 10px;
+  font-weight: 500;
 }

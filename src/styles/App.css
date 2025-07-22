@@ -1,39 +1,43 @@
-:root {
-  --primary-color: #f8d7da; /* Rosa pálido */
-  --secondary-color: #fcf8e3; /* Crema */
-  --accent-color: #e83e8c; /* Rosa vibrante para acentos */
-  --text-color: #333;
-}
-
-body {
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background-color: var(--secondary-color);
-}
-
-.navbar-brand {
-  font-weight: bold;
-}
-
-.btn-primary {
-  background-color: var(--accent-color);
-  border-color: var(--accent-color);
-}
-
-.btn-primary:hover {
-  background-color: #d9367a;
-  border-color: #d9367a;
-}
-
-.card {
-  border: none;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-}
-
-#reviews {
-  background-color: white;
+#catalog {
   padding: 4rem 0;
+  background-color: #FFFBEF; /* Amarillo mantequilla pálido */
 }
 
-footer {
-  background-color: var(--primary-color) !important;
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
 }

@@ -1,34 +1,63 @@
-
 .reviews-section {
-  padding: 80px 0;
-  background-color: var(--background-color);
+  padding: 5rem 0;
+  background-color: #EAE6F0; /* Tono lavanda pálido */
 }
 
 .review-card {
   border: none;
   border-radius: 15px;
-  background-color: var(--card-bg-color);
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
-  padding: 20px;
-  text-align: left;
+  background-color: #FFFCF7; /* Blanco cálido */
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  height: 100%;
+}
+
+.review-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+}
+
+.review-card .card-body {
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.review-quote-icon {
+  position: absolute;
+  top: 1rem;
+  left: 1.5rem;
+  font-size: 3rem;
+  color: #EAE6F0;
+  z-index: 0;
 }
 
 .stars-container {
-  margin-bottom: 15px;
-  font-size: 1.5rem;
-  text-shadow: 1px 1px 2px rgba(0,0,0,0.2);
+  margin-bottom: 1rem;
+  z-index: 1;
+}
+
+.stars-container svg {
+  color: #D4AF37; /* Dorado brillante para las estrellas */
 }
 
 .review-text {
-  font-style: italic;
-  margin-bottom: 15px;
+  font-family: 'Lato', sans-serif;
   font-size: 1rem;
-  color: var(--text-color);
+  font-style: italic;
+  color: #555;
+  margin-bottom: 1.5rem;
+  line-height: 1.6;
+  flex-grow: 1; /* Asegura que el texto empuje el nombre hacia abajo */
+  z-index: 1;
 }
 
 .review-name {
-  font-family: var(--font-primary);
+  font-family: 'Playfair Display', serif;
   font-weight: 700;
+  font-size: 1.1rem;
+  color: #333;
   text-align: right;
-  color: var(--primary-color);
+  z-index: 1;
 }
