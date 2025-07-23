@@ -3,6 +3,26 @@
   background-color: #EAE6F0; /* Tono lavanda pálido */
 }
 
+.reviews-carousel-container {
+  overflow-x: auto; /* Permite el desplazamiento horizontal */
+  -webkit-overflow-scrolling: touch; /* Desplazamiento suave en iOS */
+  scroll-snap-type: x mandatory; /* Para un desplazamiento más controlado */
+  padding-bottom: 1rem; /* Espacio para la barra de desplazamiento */
+}
+
+.reviews-row {
+  display: flex; /* Usa flexbox para las tarjetas */
+  flex-wrap: nowrap; /* Evita que las tarjetas salten de línea */
+  gap: 1.5rem; /* Espacio entre las tarjetas */
+  padding: 0 15px; /* Padding horizontal para que las tarjetas no toquen los bordes */
+}
+
+.reviews-row > .col-md-4 {
+  flex: 0 0 auto; /* Evita que las columnas se encojan */
+  width: 33.3333%; /* Ancho de cada tarjeta */
+  scroll-snap-align: start; /* Alinea las tarjetas al inicio al desplazarse */
+}
+
 .review-card {
   border: none;
   border-radius: 15px;

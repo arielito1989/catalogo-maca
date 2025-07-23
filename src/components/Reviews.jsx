@@ -1,7 +1,7 @@
 
 import React from 'react';
 import { Container, Row, Col, Card } from 'react-bootstrap';
-import { motion } from 'framer-motion';
+import { motion, AnimatePresence } from 'framer-motion';
 import { FaStar } from 'react-icons/fa';
 import ReviewForm from './ReviewForm'; // Importar el nuevo componente
 import '../styles/Reviews.css';
@@ -26,32 +26,34 @@ const Reviews = ({ reviews, addReview }) => {
     <div id="reviews" className="reviews-section">
       <Container>
         <h2 className="text-center my-5">Lo que dicen nuestros clientes</h2>
-        <motion.div 
-          className="row"
-          variants={containerVariants}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, amount: 0.5 }}
-        >
-          {reviews.map((review, index) => (
-            <Col key={index} md={4} className="mb-4">
-              <motion.div variants={itemVariants} className="h-100">
-                <Card className="review-card h-100">
-                  <Card.Body>
-                    <div className="review-quote-icon">“</div>
-                    <div className="stars-container">
-                      {[...Array(review.stars)].map((_, i) => (
-                        <FaStar key={i} color="var(--secondary-color)" />
-                      ))}
-                    </div>
-                    <Card.Text className="review-text">"{review.review}"</Card.Text>
-                    <Card.Title className="review-name">- {review.name}</Card.Title>
-                  </Card.Body>
-                </Card>
-              </motion.div>
-            </Col>
-          ))}
-        </motion.div>
+        <div className="reviews-carousel-container">
+          <motion.div 
+            className="reviews-row"
+            variants={containerVariants}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.5 }}
+          >
+            <AnimatePresence>
+              {reviews.map((review) => (
+                <motion.div key={review.id} variants={itemVariants} className="col-md-4 mb-4 h-100">
+                  <Card className="review-card h-100">
+                    <Card.Body>
+                      <div className="review-quote-icon">“</div>
+                      <div className="stars-container">
+                        {[...Array(review.stars)].map((_, i) => (
+                          <FaStar key={i} color="var(--secondary-color)" />
+                        ))}
+                      </div>
+                      <Card.Text className="review-text">"{review.review}"</Card.Text>
+                      <Card.Title className="review-name">- {review.name}</Card.Title>
+                    </Card.Body>
+                  </Card>
+                </motion.div>
+              ))}
+            </AnimatePresence>
+          </motion.div>
+        </div>
         {/* Añadir el formulario de reseñas debajo de las reseñas existentes */}
         <Row className="justify-content-center">
           <Col lg={8} md={10}>

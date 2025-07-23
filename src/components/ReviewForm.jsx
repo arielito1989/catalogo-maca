@@ -1,6 +1,6 @@
 
 import React, { useState } from 'react';
-import { Form, Button, Card } from 'react-bootstrap';
+import { Form, Button, Card, Modal } from 'react-bootstrap'; // Importar Modal
 import { FaStar, FaCheckCircle } from 'react-icons/fa';
 import { motion, AnimatePresence } from 'framer-motion';
 import '../styles/ReviewForm.css';
@@ -10,7 +10,7 @@ const ReviewForm = ({ addReview }) => {
   const [review, setReview] = useState('');
   const [rating, setRating] = useState(0);
   const [hover, setHover] = useState(0);
-  const [submitted, setSubmitted] = useState(false);
+  const [showSuccessModal, setShowSuccessModal] = useState(false); // Nuevo estado para el modal de éxito
 
   // TODO: Reemplaza este número con tu número de WhatsApp de negocio, incluyendo el código de país.
   const businessPhoneNumber = '5491122334455'; 
@@ -24,16 +24,20 @@ const ReviewForm = ({ addReview }) => {
 
     addReview({ name, review, stars: rating });
 
-    // Limpiar el formulario y mostrar mensaje de éxito
+    // Limpiar el formulario
     setName('');
     setReview('');
     setRating(0);
-    setSubmitted(true);
+    setHover(0);
 
-    // Ocultar el mensaje después de 4 segundos
+    // Mostrar el modal de éxito
+    setShowSuccessModal(true);
+
+    // Recargar la página y desplazar a la sección de reseñas después de un breve retraso
     setTimeout(() => {
-      setSubmitted(false);
-    }, 4000);
+      window.location.reload();
+      window.location.hash = 'reviews'; // Desplazar a la sección de reseñas
+    }, 2000); // 2 segundos para que el usuario vea el mensaje
   };
 
   return (
@@ -97,20 +101,22 @@ const ReviewForm = ({ addReview }) => {
             </Button>
           </div>
         </Form>
-        <AnimatePresence>
-          {submitted && (
-            <motion.div
-              className="submission-success-message"
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: 20, transition: { duration: 0.4 } }}
-            >
-              <FaCheckCircle />
-              <span>¡Gracias por tu reseña!</span>
-            </motion.div>
-          )}
-        </AnimatePresence>
       </Card.Body>
+
+      {/* Modal de éxito personalizado */}
+      <Modal show={showSuccessModal} onHide={() => setShowSuccessModal(false)} centered>
+        <Modal.Body className="text-center success-modal-body">
+          <motion.div
+            initial={{ scale: 0.5, opacity: 0 }}
+            animate={{ scale: 1, opacity: 1 }}
+            transition={{ type: "spring", stiffness: 260, damping: 20 }}
+          >
+            <FaCheckCircle className="success-icon" />
+            <h3>¡Reseña Enviada con Éxito!</h3>
+            <p>¡Gracias por compartir tu experiencia!</p>
+          </motion.div>
+        </Modal.Body>
+      </Modal>
     </Card>
   );
 };

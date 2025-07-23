@@ -38,10 +38,36 @@
   align-items: center;
   justify-content: center;
   gap: 10px;
-  padding: 1rem;
+  padding: 1.5rem; /* Más padding */
   margin-top: 1.5rem;
   background-color: #E6F9F0;
   color: #28A745;
   border-radius: 10px;
-  font-weight: 500;
+  font-weight: 700; /* Más negrita */
+  font-size: 1.1rem; /* Un poco más grande */
+  box-shadow: 0 4px 10px rgba(40, 167, 69, 0.2); /* Sombra sutil */
+}
+
+.success-modal-body {
+  background-color: #f8f9fa; /* Fondo claro para el modal */
+  color: #28a745; /* Color verde para el texto */
+  padding: 3rem 1rem; /* Más padding */
+  border-radius: 10px; /* Bordes redondeados */
+}
+
+.success-modal-body .success-icon {
+  font-size: 4rem; /* Icono grande */
+  margin-bottom: 1rem;
+  color: #28a745;
+}
+
+.success-modal-body h3 {
+  font-size: 1.8rem;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+
+.success-modal-body p {
+  font-size: 1.1rem;
+  color: #6c757d;
 }

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Header from './components/Header';
 import Hero from './components/Hero';
@@ -6,9 +6,10 @@ import ProductCard from './components/ProductCard';
 import Reviews from './components/Reviews';
 import Footer from './components/Footer';
 import ScrollArrows from './components/ScrollArrows';
-import ScrollAnimation from './components/ScrollAnimation'; // Importar
-import CustomCakes from './components/CustomCakes'; // Importar
-import WhatsAppButton from './components/WhatsAppButton'; // Importar
+import ScrollAnimation from './components/ScrollAnimation';
+import CustomCakes from './components/CustomCakes';
+import WhatsAppButton from './components/WhatsAppButton';
+import ProductModal from './components/ProductModal'; // Importar el modal
 import './styles/App.css';
 import { Container, Row, Col } from 'react-bootstrap';
 
@@ -16,23 +17,25 @@ import productsData from './products.json';
 
 const initialReviews = [
   {
-    name: "Ana Pérez",
-    review: "¡Las tortas más ricas que he probado! El bizcocho de chocolate es increíblemente húmedo y el relleno de manjar es perfecto. ¡Súper recomendados!",
+    id: 1,
+    name: "Zulma C.",
+    review: "¡Todo muy rico, mi hijita siempre complaciendo a su mami jaj",
     stars: 5
   },
   {
-    name: "Carlos Gómez",
-    review: "Los cupcakes son una delicia, muy esponjosos y con el dulzor justo. La presentación es impecable. Ideal para regalar (¡o para uno mismo!).",
+    id: 2,
+    name: "Kevin N.",
+    review: "Que genia maky!!! re rico todo, a mis hijas les encantan tus tortas.",
     stars: 5
   },
   {
-    name: "Laura Fernandez",
-    review: "Las galletas de avena son mis favoritas. Crujientes, sabrosas y se nota que están hechas con ingredientes de calidad. ¡No puedo parar de comerlas!",
+    id: 3,
+    name: "Yesica",
+    review: "Aguanten tus lemon pieeeee!!",
     stars: 5
   }
 ];
 
-// Definir variantes de animación
 const sectionAnimation = {
   hidden: { opacity: 0, y: 50 },
   visible: { 
@@ -46,10 +49,58 @@ const sectionAnimation = {
 };
 
 function App() {
-  const [reviews, setReviews] = useState(initialReviews);
+  const [reviews, setReviews] = useState(() => {
+    const savedReviews = localStorage.getItem('reviews');
+    let loadedReviews = [];
+    if (savedReviews) {
+      try {
+        loadedReviews = JSON.parse(savedReviews);
+        // Asegurarse de que todas las reseñas cargadas tengan un ID
+        loadedReviews = loadedReviews.map(review => {
+          if (!review.id) {
+            return { ...review, id: crypto.randomUUID() }; // Asignar un nuevo ID único
+          }
+          return review;
+        });
+      } catch (e) {
+        console.error("Error al parsear reseñas de localStorage:", e);
+        // Si hay un error al parsear, usar las reseñas iniciales y asegurar IDs
+        loadedReviews = initialReviews.map(review => ({ ...review, id: review.id || crypto.randomUUID() }));
+      }
+    } else {
+      // Si no hay reseñas guardadas, usar las iniciales y asegurar IDs
+      loadedReviews = initialReviews.map(review => ({ ...review, id: review.id || crypto.randomUUID() }));
+    }
+    return loadedReviews;
+  });
+  const [showModal, setShowModal] = useState(false);
+  const [selectedProduct, setSelectedProduct] = useState(null);
+
+  // Guardar reseñas en localStorage cada vez que cambian
+  useEffect(() => {
+    localStorage.setItem('reviews', JSON.stringify(reviews));
+  }, [reviews]);
 
   const addReview = (newReview) => {
-    setReviews([newReview, ...reviews]);
+    setReviews((prevReviews) => {
+      const reviewWithId = { ...newReview, id: Date.now() }; // Añadir un ID único
+      const updatedReviews = [reviewWithId, ...prevReviews];
+      // Limitar a 20 reseñas, eliminando las más antiguas
+      if (updatedReviews.length > 20) {
+        return updatedReviews.slice(0, 20);
+      }
+      return updatedReviews;
+    });
+  };
+
+  const handleShowModal = (product) => {
+    setSelectedProduct(product);
+    setShowModal(true);
+  };
+
+  const handleCloseModal = () => {
+    setShowModal(false);
+    setSelectedProduct(null);
   };
 
   return (
@@ -67,7 +118,7 @@ function App() {
               <Row>
                 {products.map((product) => (
                   <Col key={product.id} sm={12} md={6} lg={4} className="mb-4">
-                    <ProductCard {...product} />
+                    <ProductCard product={product} onShowModal={handleShowModal} />
                   </Col>
                 ))}
               </Row>
@@ -90,6 +141,8 @@ function App() {
       
       <WhatsAppButton />
       <ScrollArrows />
+
+      <ProductModal product={selectedProduct} show={showModal} onHide={handleCloseModal} />
     </div>
   );
 }

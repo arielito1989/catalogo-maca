@@ -50,14 +50,16 @@
   .custom-cakes-gallery {
     flex: 1;
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 1rem;
-    transform: rotate(5deg);
+    grid-template-columns: repeat(3, 1fr); /* 3 columnas para más imágenes */
+    gap: 1.5rem; /* Aumenta el espacio entre imágenes */
+    padding: 1rem; /* Añade un poco de padding */
+    /* transform: rotate(5deg); */ /* Eliminado para una apariencia más limpia */
   }
   
   .gallery-image {
     width: 100%;
-    height: auto;
+    height: 200px; /* Altura fija para uniformidad */
+    object-fit: cover; /* Asegura que las imágenes cubran el espacio */
     border-radius: 15px;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease;
@@ -65,5 +67,66 @@
   
   .gallery-image:hover {
     transform: scale(1.05);
+  }
+
+  /* Estilos para el modal de imagen de tortas personalizadas */
+  .modal-content {
+    background-color: #2c2c2c; /* Gris carbón oscuro */
+    color: #f5f5dc; /* Crema suave para el texto */
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+    animation: fadeInScale 0.3s ease-out; /* Animación de aparición */
+  }
+
+  .modal-header {
+    border-bottom: 1px solid #444; /* Borde más oscuro */
+  }
+
+  .modal-title {
+    color: #f5f5dc; /* Color del título */
+  }
+
+  .btn-close {
+    filter: invert(1); /* Invierte el color para que sea visible en fondo oscuro */
+  }
+
+  .carousel-control-prev,
+  .carousel-control-next {
+    width: 5%;
+    opacity: 0.7;
+    transition: opacity 0.2s ease-in-out, transform 0.2s ease-in-out;
+  }
+
+  .carousel-control-prev:hover,
+  .carousel-control-next:hover {
+    opacity: 1;
+    transform: scale(1.1);
+  }
+
+  .carousel-control-prev-icon,
+  .carousel-control-next-icon {
+    background-image: none;
+    font-size: 2.5rem;
+    color: #f5f5dc;
+    text-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+  }
+
+  .carousel-control-prev-icon::before {
+    content: '‹';
+  }
+
+  .carousel-control-next-icon::before {
+    content: '›';
+  }
+
+  @keyframes fadeInScale {
+    from {
+      opacity: 0;
+      transform: scale(0.9);
+    }
+    to {
+      opacity: 1;
+      transform: scale(1);
+    }
   }
   
