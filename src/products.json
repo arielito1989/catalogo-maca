@@ -1,38 +1,279 @@
-[
-  {
-    "name": "Torta de Chocolate",
-    "description": "Deliciosa torta de chocolate con relleno de manjar.",
-    "price": "$25.000",
-    "image": "torta1.jpg"
-  },
-  {
-    "name": "Cupcakes de Vainilla",
-    "description": "Esponjososos cupcakes de vainilla con frosting de colores.",
-    "price": "$2.000 c/u",
-    "image": "torta2.webp"
-  },
-  {
-    "name": "Galletas de Avena",
-    "description": "Galletas crujientes y saludables de avena con pasas.",
-    "price": "$500 c/u",
-    "image": "cookies1.webp"
-  },
-  {
-    "name": "Budin de Limon",
-    "description": "Budin de limon con glaseado.",
-    "price": "$3.000",
-    "image": "budin1.webp"
-  },
-  {
-    "name": "Pan Dulce",
-    "description": "Pan dulce con frutas abrillantadas y frutos secos.",
-    "price": "$5.000",
-    "image": "pandulce1.webp"
-  },
-  {
-    "name": "Tarta de Frutilla",
-    "description": "Tarta de frutilla con crema pastelera.",
-    "price": "$10.000",
-    "image": "tarta1.webp"
-  }
-]
+
+{
+  "tortas": [
+    {
+      "id": 1,
+      "name": "Torta Brownie",
+      "image": "assets/images/tortas/brownie1.jpg",
+      "description": "Intenso sabor a chocolate en una base de brownie.",
+      "price": "$2600"
+    },
+    {
+      "id": 2,
+      "name": "Torta Brownie Especial",
+      "image": "assets/images/tortas/brownie2.jpg",
+      "description": "Brownie decorado, una explosión de sabor.",
+      "price": "$2800"
+    },
+    {
+      "id": 3,
+      "name": "Torta Clásica",
+      "image": "assets/images/tortas/torta1.jpg",
+      "description": "Un clásico que nunca falla, bizcocho húmedo y suave.",
+      "price": "$2200"
+    },
+    {
+      "id": 4,
+      "name": "Torta Matilda!",
+      "image": "assets/images/tortas/torta10.jpg",
+      "description": "¡Tu puedes Bruce! Rico, denso, chocolate puro. ¡Un festín legendario!.",
+      "price": "$3000"
+    },
+    {
+      "id": 5,
+      "name": "Torta de Ocasión",
+      "image": "assets/images/tortas/torta11.jpg",
+      "description": "Perfecta para cualquier evento especial.",
+      "price": "$3200"
+    },
+    {
+      "id": 6,
+      "name": "Torta Elegante",
+      "image": "assets/images/tortas/torta12.jpg",
+      "description": "Diseño sofisticado y sabor inigualable.",
+      "price": "$3500"
+    },
+    {
+      "id": 7,
+      "name": "Torta de Fantasía",
+      "image": "assets/images/tortas/torta13.jpg",
+      "description": "Un diseño único para un momento inolvidable.",
+      "price": "$3800"
+    },
+    {
+      "id": 8,
+      "name": "Torta Delicia",
+      "image": "assets/images/tortas/torta14.jpg",
+      "description": "Una combinación de sabores que te encantará.",
+      "price": "$3300"
+    },
+    {
+      "id": 9,
+      "name": "Torta Suprema",
+      "image": "assets/images/tortas/torta15.jpg",
+      "description": "La reina de las tortas, para los paladares más exigentes.",
+      "price": "$4000"
+    },
+    {
+      "id": 10,
+      "name": "Torta Tentación",
+      "image": "assets/images/tortas/torta16.jpg",
+      "description": "Imposible resistirse a esta delicia.",
+      "price": "$3600"
+    },
+    {
+      "id": 11,
+      "name": "Torta de Ensueño",
+      "image": "assets/images/tortas/torta17.jpg",
+      "description": "Hecha realidad para tu disfrute.",
+      "price": "$3900"
+    },
+    {
+      "id": 12,
+      "name": "Torta Corazón",
+      "image": "assets/images/tortas/torta18.jpg",
+      "description": "El detalle perfecto para demostrar tu cariño.",
+      "price": "$3400"
+    },
+    {
+      "id": 13,
+      "name": "Torta Floral",
+      "image": "assets/images/tortas/torta19.jpg",
+      "description": "Elegancia y frescura en cada bocado.",
+      "price": "$3700"
+    },
+    {
+      "id": 14,
+      "name": "Torta Frutal",
+      "image": "assets/images/tortas/torta2.webp",
+      "description": "Frescura y dulzura natural en un solo postre.",
+      "price": "$2800"
+    },
+    {
+      "id": 15,
+      "name": "Torta de Chocolate",
+      "image": "assets/images/tortas/torta3.jpg",
+      "description": "Para los amantes del chocolate, una experiencia intensa.",
+      "price": "$2600"
+    },
+    {
+      "id": 16,
+      "name": "Torta Moderna",
+      "image": "assets/images/tortas/torta4.webp",
+      "description": "Diseño vanguardista y un sabor espectacular.",
+      "price": "$3100"
+    },
+    {
+      "id": 17,
+      "name": "Torta Rústica",
+      "image": "assets/images/tortas/torta5.webp",
+      "description": "El encanto de lo casero con un toque gourmet.",
+      "price": "$2900"
+    },
+    {
+      "id": 18,
+      "name": "Torta Clásica Decorada",
+      "image": "assets/images/tortas/torta6.jpg",
+      "description": "La receta de siempre con una presentación renovada.",
+      "price": "$2400"
+    },
+    {
+      "id": 19,
+      "name": "Torta Minimalista",
+      "image": "assets/images/tortas/torta7.webp",
+      "description": "Sencillez y elegancia en su máxima expresión.",
+      "price": "$2700"
+    },
+    {
+      "id": 20,
+      "name": "Torta de Autor",
+      "image": "assets/images/tortas/torta8.jpg",
+      "description": "Una creación única de nuestro chef.",
+      "price": "$4200"
+    },
+    {
+      "id": 21,
+      "name": "Torta Especial de la Casa",
+      "image": "assets/images/tortas/torta9.webp",
+      "description": "La receta secreta que nos hace únicos.",
+      "price": "$4500"
+    }
+  ],
+  "tartas": [
+    {
+      "id": 22,
+      "name": "Tarta de Frutas",
+      "image": "assets/images/tartas/tarta1.jpg",
+      "description": "Base crocante y frutas frescas de estación.",
+      "price": "$1800"
+    },
+    {
+      "id": 23,
+      "name": "Tarta de Crema",
+      "image": "assets/images/tartas/tarta2.webp",
+      "description": "Suavidad y dulzura en cada porción.",
+      "price": "$1700"
+    },
+    {
+      "id": 24,
+      "name": "Tarta de Manzana",
+      "image": "assets/images/tartas/tarta3.jpg",
+      "description": "El clásico sabor de la manzana horneada.",
+      "price": "$1600"
+    },
+    {
+      "id": 25,
+      "name": "Tarta de Chocolate y Nuez",
+      "image": "assets/images/tartas/tarta4.jpg",
+      "description": "Combinación perfecta de texturas y sabores.",
+      "price": "$1900"
+    },
+    {
+      "id": 26,
+      "name": "Tarta de Ricota",
+      "image": "assets/images/tartas/tarta5.jpg",
+      "description": "Cremosa y deliciosa, un postre tradicional.",
+      "price": "$1700"
+    },
+    {
+      "id": 27,
+      "name": "Tarta de Coco",
+      "image": "assets/images/tartas/tarta6.jpg",
+      "description": "El exótico sabor del coco en una tarta irresistible.",
+      "price": "$1800"
+    }
+  ],
+  "pandulce": [
+    {
+      "id": 28,
+      "name": "Pan Dulce Tradicional",
+      "image": "assets/images/pandulce/pandulce1.jpg",
+      "description": "Con frutas abrillantadas y frutos secos.",
+      "price": "$1500"
+    },
+    {
+      "id": 29,
+      "name": "Pan Dulce con Chocolate",
+      "image": "assets/images/pandulce/pandulce2.jpg",
+      "description": "Una variante deliciosa para los más golosos.",
+      "price": "$1600"
+    }
+  ],
+  "galletas": [
+    {
+      "id": 30,
+      "name": "Cookies con Chips",
+      "image": "assets/images/galletas/cookies1.jpg",
+      "description": "Las clásicas galletas con chips de chocolate.",
+      "price": "$500"
+    },
+    {
+      "id": 31,
+      "name": "Galletas de Avena",
+      "image": "assets/images/galletas/cookies2.jpg",
+      "description": "Saludables y deliciosas, perfectas para la merienda.",
+      "price": "$550"
+    },
+    {
+      "id": 32,
+      "name": "Galletas Decoradas",
+      "image": "assets/images/galletas/cookies3.jpg",
+      "description": "Pequeñas obras de arte comestibles.",
+      "price": "$600"
+    },
+    {
+      "id": 33,
+      "name": "Galletas Surtidas",
+      "image": "assets/images/galletas/cookies4.jpg",
+      "description": "Una variedad para todos los gustos.",
+      "price": "$580"
+    },
+    {
+      "id": 34,
+      "name": "Galletas de Jengibre",
+      "image": "assets/images/galletas/cookies5.jpg",
+      "description": "El sabor especiado de la Navidad, todo el año.",
+      "price": "$620"
+    }
+  ],
+  "budin": [
+    {
+      "id": 35,
+      "name": "Budín de Limón",
+      "image": "assets/images/budin/budin1.jpg",
+      "description": "Húmedo y con un glaseado de limón irresistible.",
+      "price": "$1200"
+    },
+    {
+      "id": 36,
+      "name": "Budín de Vainilla",
+      "image": "assets/images/budin/budin2.jpg",
+      "description": "El sabor clásico que a todos les encanta.",
+      "price": "$1100"
+    },
+    {
+      "id": 37,
+      "name": "Budín Marmolado",
+      "image": "assets/images/budin/budin3.jpg",
+      "description": "La combinación perfecta de vainilla y chocolate.",
+      "price": "$1300"
+    },
+    {
+      "id": 38,
+      "name": "Budín con Frutos Secos",
+      "image": "assets/images/budin/budin4.jpg",
+      "description": "Una textura crujiente y un sabor delicioso.",
+      "price": "$1400"
+    }
+  ]
+}

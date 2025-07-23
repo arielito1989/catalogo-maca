@@ -7,25 +7,12 @@ import Reviews from './components/Reviews';
 import Footer from './components/Footer';
 import ScrollArrows from './components/ScrollArrows';
 import ScrollAnimation from './components/ScrollAnimation'; // Importar
+import CustomCakes from './components/CustomCakes'; // Importar
+import WhatsAppButton from './components/WhatsAppButton'; // Importar
 import './styles/App.css';
 import { Container, Row, Col } from 'react-bootstrap';
 
-import products from './products.json';
-import torta1 from './assets/images/tortas/torta1.jpg';
-import torta2 from './assets/images/tortas/torta2.webp';
-import cookies1 from './assets/images/galletas/cookies1.jpg';
-import budin1 from './assets/images/budin/budin1.jpg';
-import pandulce1 from './assets/images/pandulce/pandulce1.jpg';
-import tarta1 from './assets/images/tartas/tarta1.jpg';
-
-const images = {
-  "torta1.jpg": torta1,
-  "torta2.webp": torta2,
-  "cookies1.jpg": cookies1,
-  "budin1.jpg": budin1,
-  "pandulce1.jpg": pandulce1,
-  "tarta1.jpg": tarta1
-};
+import productsData from './products.json';
 
 const initialReviews = [
   {
@@ -69,28 +56,43 @@ function App() {
     <div className="App">
       <Header />
       <Hero />
+      <Container id="catalog" className="my-5">
+        <h2 className="text-center display-4 font-weight-bold">Nuestro Catálogo</h2>
+        <p className="text-center text-muted mb-5">Hecho con amor, directo a tu mesa.</p>
+        
+        {Object.entries(productsData).map(([category, products]) => (
+          <ScrollAnimation key={category} animation={sectionAnimation}>
+            <div className="mb-5">
+              <h3 className="text-capitalize font-weight-bold mb-4">{category.replace(/_/g, ' ')}</h3>
+              <Row>
+                {products.map((product) => (
+                  <Col key={product.id} sm={12} md={6} lg={4} className="mb-4">
+                    <ProductCard {...product} />
+                  </Col>
+                ))}
+              </Row>
+            </div>
+          </ScrollAnimation>
+        ))}
+      </Container>
+      
       <ScrollAnimation animation={sectionAnimation}>
-        <Container id="catalog">
-          <h2 className="text-center my-4">Nuestro Catálogo</h2>
-          <p className="text-center text-muted mb-4">Todos los pedidos se coordinan y personalizan a través de WhatsApp para asegurarte el mejor servicio.</p>
-          <Row>
-            {products.map((product, index) => (
-              <Col key={index} sm={12} md={6} lg={4} className="mb-4">
-                <ProductCard {...product} image={images[product.image]} />
-              </Col>
-            ))}
-          </Row>
-        </Container>
+        <CustomCakes />
       </ScrollAnimation>
+
       <ScrollAnimation animation={sectionAnimation}>
         <Reviews reviews={reviews} addReview={addReview} />
       </ScrollAnimation>
+      
       <ScrollAnimation animation={sectionAnimation}>
         <Footer />
       </ScrollAnimation>
+      
+      <WhatsAppButton />
       <ScrollArrows />
     </div>
   );
 }
 
 export default App;
+

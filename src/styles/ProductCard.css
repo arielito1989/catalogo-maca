@@ -30,10 +30,13 @@
 }
 
 .product-card-price {
+  display: flex;
+  align-items: center;
   font-family: var(--font-secondary);
   font-weight: 700;
   color: #333;
-  font-size: 1.2rem;
+  font-size: 1.4rem;
+  color: #ff69b4;
 }
 
 .product-card .product-card-button {

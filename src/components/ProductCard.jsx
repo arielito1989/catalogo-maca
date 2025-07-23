@@ -2,8 +2,9 @@
 import React from 'react';
 import { Card, Button } from 'react-bootstrap';
 import { motion } from 'framer-motion';
-import { FaWhatsapp } from 'react-icons/fa';
+import { FaWhatsapp, FaDollarSign } from 'react-icons/fa';
 import '../styles/ProductCard.css';
+import imageLoader from '../imageLoader'; // Importa el cargador de imágenes
 
 const ProductCard = ({ name, description, price, image }) => {
   const whatsappNumber = '5491160399835';
@@ -15,6 +16,8 @@ const ProductCard = ({ name, description, price, image }) => {
     visible: { opacity: 1, y: 0, transition: { duration: 0.5 } }
   };
 
+  const imageUrl = imageLoader[image]; // Obtiene la URL de la imagen del cargador
+
   return (
     <motion.div
       variants={cardVariants}
@@ -22,12 +25,15 @@ const ProductCard = ({ name, description, price, image }) => {
       className="h-100"
     >
       <Card className="product-card h-100">
-        <Card.Img variant="top" src={image} className="product-card-img" />
+        <Card.Img variant="top" src={imageUrl} className="product-card-img" />
         <Card.Body className="d-flex flex-column">
           <Card.Title className="product-card-title">{name}</Card.Title>
           <Card.Text className="product-card-description">{description}</Card.Text>
           <div className="d-flex justify-content-between align-items-center mt-auto">
-            <Card.Text className="product-card-price mb-0">{price}</Card.Text>
+            <div className="product-card-price">
+              <FaDollarSign className="me-1" />
+              {price}
+            </div>
             <Button 
               href={whatsappUrl} 
               target="_blank" 
