@@ -153,8 +153,8 @@
 
 @media (max-width: 767px) {
   .footer-section {
-    clip-path: polygon(0 10%, 100% 0, 100% 100%, 0 100%);
-    padding-top: 4rem;
+    clip-path: none; /* Elimina el clip-path en móviles */
+    padding-top: 3rem;
   }
   .footer-column {
     min-height: auto;
@@ -163,5 +163,46 @@
   }
   .footer-column:last-child {
     border-bottom: none;
+  }
+  .footer-logo {
+    height: 40px;
+  }
+  .footer-title {
+    font-size: 1.5rem;
+  }
+  .footer-subtitle {
+    font-size: 0.9rem;
+  }
+  .footer-heading {
+    font-size: 1.3rem;
+  }
+  .social-icon {
+    font-size: 2rem;
+  }
+  .footer-copyright {
+    font-size: 0.8rem;
+  }
+  .whatsapp-float {
+    width: 50px;
+    height: 50px;
+    font-size: 2rem;
+    bottom: 20px;
+    right: 20px;
+  }
+}
+
+/* Ajustes para pantallas muy pequeñas (teléfonos pequeños) */
+@media (max-width: 575.98px) { /* Bootstrap's 'sm' breakpoint */
+  .footer-column {
+    padding: 1rem 0.5rem;
+  }
+  .footer-title {
+    font-size: 1.3rem;
+  }
+  .footer-heading {
+    font-size: 1.1rem;
+  }
+  .social-icon {
+    font-size: 1.8rem;
   }
 }

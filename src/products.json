@@ -25,7 +25,11 @@
       "id": 4,
       "name": "Torta Matilda",
       "images": [
-        "assets/images/tortas/torta10.jpg"
+        "assets/images/tortas/torta10.jpg",
+        "assets/images/tortas/torta16.jpg",
+        "assets/images/tortas/torta17.jpg",
+        "assets/images/tortas/torta18.jpg",
+        "assets/images/tortas/torta19.jpg"
       ],
       "description": "¡Tu puedes Bruce! Rico, denso, chocolate puro. ¡Un festín legendario!",
       "price": "$3000"

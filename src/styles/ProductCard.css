@@ -55,3 +55,63 @@
   transform: scale(1.05);
   color: white;
 }
+
+/* Ajustes para pantallas medianas (tablets) */
+@media (max-width: 991.98px) { /* Bootstrap's 'lg' breakpoint */
+  .product-card-img {
+    height: 200px; /* Reduce la altura de la imagen en tablets */
+  }
+  .product-card-title {
+    font-size: 1.3rem;
+  }
+  .product-card-description {
+    font-size: 0.9rem;
+  }
+  .product-card-price {
+    font-size: 1.2rem;
+  }
+  .product-card .product-card-button {
+    padding: 8px 15px;
+    font-size: 0.9rem;
+  }
+}
+
+/* Ajustes para pantallas pequeñas (teléfonos) */
+@media (max-width: 767.98px) { /* Bootstrap's 'md' breakpoint */
+  .product-card-img {
+    height: 180px; /* Reduce aún más la altura de la imagen en teléfonos */
+  }
+  .product-card-title {
+    font-size: 1.2rem;
+  }
+  .product-card-description {
+    font-size: 0.85rem;
+  }
+  .product-card-price {
+    font-size: 1.1rem;
+  }
+  .product-card .product-card-button {
+    padding: 6px 12px;
+    font-size: 0.8rem;
+  }
+}
+
+/* Ajustes para pantallas muy pequeñas (teléfonos pequeños) */
+@media (max-width: 575.98px) { /* Bootstrap's 'sm' breakpoint */
+  .product-card-img {
+    height: 150px;
+  }
+  .product-card-title {
+    font-size: 1.1rem;
+  }
+  .product-card-description {
+    font-size: 0.8rem;
+  }
+  .product-card-price {
+    font-size: 1rem;
+  }
+  .product-card .product-card-button {
+    padding: 5px 10px;
+    font-size: 0.75rem;
+  }
+}

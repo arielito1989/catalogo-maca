@@ -26,3 +26,44 @@
   height: 80px;
   width: auto;
 }
+
+/* Ajustes para pantallas más pequeñas (tablets y teléfonos) */
+@media (max-width: 991.98px) { /* Bootstrap's 'lg' breakpoint */
+  .custom-navbar .navbar-brand {
+    font-size: 1.2rem; /* Tamaño de fuente más pequeño para el texto de la marca */
+  }
+
+  .custom-navbar .logo-img {
+    height: 60px; /* Logo más pequeño para tablets */
+  }
+
+  .custom-navbar .navbar-toggler {
+    border-color: rgba(255, 255, 255, 0.5); /* Hace visible el borde del toggler */
+  }
+
+  .custom-navbar .navbar-toggler-icon {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%28255, 255, 255, 0.8%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e"); /* Icono de hamburguesa blanco */
+  }
+
+  .custom-navbar .navbar-collapse {
+    background-color: var(--footer-bg-color); /* Fondo para el menú colapsado */
+    padding: 1rem;
+    border-radius: 0 0 10px 10px;
+  }
+
+  .custom-navbar .nav-link {
+    padding: 0.5rem 1rem; /* Ajusta el padding para los enlaces de navegación */
+    text-align: center;
+  }
+}
+
+/* Ajustes adicionales para pantallas muy pequeñas (teléfonos) */
+@media (max-width: 767.98px) { /* Bootstrap's 'md' breakpoint */
+  .custom-navbar .navbar-brand {
+    font-size: 1rem; /* Tamaño de fuente aún más pequeño para el texto de la marca */
+  }
+
+  .custom-navbar .logo-img {
+    height: 50px; /* Logo aún más pequeño para teléfonos */
+  }
+}

@@ -74,16 +74,54 @@
   transform: translateY(-3px);
 }
 
-@media (max-width: 768px) {
+/* Ajustes para pantallas medianas (tablets) */
+@media (max-width: 991.98px) { /* Bootstrap's 'lg' breakpoint */
   .hero-title {
-    font-size: 3rem;
+    font-size: 3.5rem; /* Un poco más pequeño para tablets */
   }
   .hero-subtitle {
-    font-size: 1.3rem;
+    font-size: 1.4rem;
   }
   .hero-cta-button {
-    padding: 12px 28px;
-    font-size: 1rem;
+    padding: 12px 30px;
+    font-size: 1.1rem;
+  }
+}
+
+/* Ajustes para pantallas pequeñas (teléfonos) */
+@media (max-width: 767.98px) { /* Bootstrap's 'md' breakpoint */
+  .hero-section {
+    min-height: 70vh; /* Reduce la altura mínima en móviles */
+    clip-path: none; /* Elimina el clip-path en móviles para evitar recortes */
+  }
+  .hero-title {
+    font-size: 2.5rem; /* Tamaño de fuente más pequeño para teléfonos */
+    margin-bottom: 0.8rem;
+  }
+  .hero-subtitle {
+    font-size: 1.1rem;
+    margin-bottom: 1.5rem;
+  }
+  .hero-cta-button {
+    padding: 10px 25px;
+    font-size: 0.9rem;
+  }
+  .hero-content {
+    padding: 1rem; /* Reduce el padding en móviles */
+  }
+}
+
+/* Ajustes para pantallas muy pequeñas (teléfonos pequeños) */
+@media (max-width: 575.98px) { /* Bootstrap's 'sm' breakpoint */
+  .hero-title {
+    font-size: 2rem;
+  }
+  .hero-subtitle {
+    font-size: 0.9rem;
+  }
+  .hero-cta-button {
+    padding: 8px 20px;
+    font-size: 0.8rem;
   }
 }
 
