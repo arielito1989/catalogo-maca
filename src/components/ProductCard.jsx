@@ -12,7 +12,7 @@ const ProductCard = ({ product, onShowModal }) => {
   const whatsappUrl = `https://api.whatsapp.com/send?phone=${whatsappNumber}&text=${encodeURIComponent(message)}`;
 
   const cardVariants = {
-    hidden: { opacity: 0, y: 50 },
+    hidden: { opacity: 0, y: 30 },
     visible: { opacity: 1, y: 0, transition: { duration: 0.5 } }
   };
 
@@ -22,32 +22,37 @@ const ProductCard = ({ product, onShowModal }) => {
   return (
     <motion.div
       variants={cardVariants}
-      whileHover={{ y: -10, scale: 1.03 }}
-      className="h-100"
-      onClick={() => onShowModal(product)} // Abre el modal al hacer clic
+      whileHover={{ y: -8 }}
+      className="h-100 product-card-wrapper"
+      onClick={() => onShowModal(product)}
     >
-      <Card className="product-card h-100">
-        <Card.Img variant="top" src={imageUrl} className="product-card-img" />
-        <Card.Body className="d-flex flex-column">
-          <Card.Title className="product-card-title">{product.name}</Card.Title>
-          <Card.Text className="product-card-description">{product.description}</Card.Text>
-          <div className="d-flex justify-content-between align-items-center mt-auto">
-            <div className="product-card-price">
-              <FaDollarSign className="me-1" />
+      <div className="product-card">
+        <div className="product-card-img-container">
+          <img src={imageUrl} alt={product.name} className="product-card-img" />
+          <div className="product-card-overlay">
+            <span className="view-details">Ver Detalles</span>
+          </div>
+        </div>
+        <div className="product-card-body">
+          <h3 className="product-card-title">{product.name}</h3>
+          <p className="product-card-description">{product.description}</p>
+          <div className="product-card-footer">
+            <span className="product-card-price">
+              <FaDollarSign className="me-1" size={14} />
               {product.price}
-            </div>
+            </span>
             <Button 
               href={whatsappUrl} 
               target="_blank" 
               className="product-card-button"
-              onClick={(e) => e.stopPropagation()} // Evita que el clic en el botón abra el modal
+              onClick={(e) => e.stopPropagation()}
             >
               <FaWhatsapp className="me-2" />
-              Pedir por WhatsApp
+              Pedir
             </Button>
           </div>
-        </Card.Body>
-      </Card>
+        </div>
+      </div>
     </motion.div>
   );
 };

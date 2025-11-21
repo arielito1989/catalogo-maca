@@ -22,3 +22,7 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+.gemini
+walkthrough.md
+task.md
+implementation_plan.md

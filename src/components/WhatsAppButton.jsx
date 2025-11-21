@@ -10,12 +10,13 @@ const WhatsAppButton = () => {
   return (
     <a
       href={whatsappUrl}
-      className="whatsapp-flotante"
+      className="whatsapp-pill"
       target="_blank"
       rel="noopener noreferrer"
       aria-label="Contactar por WhatsApp"
     >
       <FaWhatsapp className="whatsapp-icon" />
+      <span className="whatsapp-text">¡Escríbenos!</span>
     </a>
   );
 };

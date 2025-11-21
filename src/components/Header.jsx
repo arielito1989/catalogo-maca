@@ -17,23 +17,39 @@ const Header = () => {
   }, []);
 
   return (
-    <Navbar 
-      expand="lg" 
+    <Navbar
+      expand="lg"
       fixed="top"
       className={`custom-navbar ${scrolled ? 'scrolled' : ''}`}
     >
-      <Container>
-        <Navbar.Brand href="#home" className="d-flex align-items-center">
-          <img src={logo} alt="Dulces Maquialex Logo" className="logo-img me-2" />
-          <span style={{ fontFamily: 'var(--font-primary)', color: 'white', fontWeight: 'bold' }}>Dulces Maquialex</span>
+      <Container className="justify-content-between">
+        {/* Mobile Toggle */}
+        <Navbar.Toggle aria-controls="basic-navbar-nav" className="d-lg-none" />
+
+        {/* Mobile Logo (only visible on small screens) */}
+        <Navbar.Brand href="#home" className="d-lg-none mx-auto">
+          <img src={logo} alt="Dulces Maquialex Logo" className="logo-img-mobile" />
         </Navbar.Brand>
-        <Navbar.Toggle aria-controls="basic-navbar-nav" />
+
         <Navbar.Collapse id="basic-navbar-nav">
-          <Nav className="ms-auto">
-            <Nav.Link href="#home">Inicio</Nav.Link>
-            <Nav.Link href="#catalog">Catálogo</Nav.Link>
-            <Nav.Link href="#reviews">Reseñas</Nav.Link>
-            <Nav.Link href="#footer">Contacto</Nav.Link>
+          <Nav className="w-100 justify-content-between align-items-center">
+            {/* Left Nav */}
+            <div className="d-flex gap-4 nav-group-left">
+              <Nav.Link href="#home">Inicio</Nav.Link>
+              <Nav.Link href="#catalog">Catálogo</Nav.Link>
+            </div>
+
+            {/* Desktop Center Logo */}
+            <Navbar.Brand href="#home" className="d-none d-lg-block mx-auto text-center">
+              <img src={logo} alt="Dulces Maquialex Logo" className="logo-img-desktop" />
+              <div className="brand-text">Dulces Maquialex</div>
+            </Navbar.Brand>
+
+            {/* Right Nav */}
+            <div className="d-flex gap-4 nav-group-right">
+              <Nav.Link href="#reviews">Reseñas</Nav.Link>
+              <Nav.Link href="#footer">Contacto</Nav.Link>
+            </div>
           </Nav>
         </Navbar.Collapse>
       </Container>

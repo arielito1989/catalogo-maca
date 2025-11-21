@@ -1,6 +1,19 @@
 #catalog {
-  padding: 4rem 0;
-  background-color: #FFFBEF; /* Amarillo mantequilla pálido */
+  padding: 6rem 0;
+  position: relative;
+}
+
+#catalog::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 100%;
+  background: radial-gradient(circle at top right, rgba(212, 140, 157, 0.05), transparent 40%),
+    radial-gradient(circle at bottom left, rgba(197, 160, 101, 0.05), transparent 40%);
+  pointer-events: none;
+  z-index: -1;
 }
 
 .App {
@@ -37,6 +50,7 @@
   from {
     transform: rotate(0deg);
   }
+
   to {
     transform: rotate(360deg);
   }

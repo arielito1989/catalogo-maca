@@ -1,104 +1,112 @@
 .reviews-section {
-  padding: 5rem 0;
-  background-color: #EAE6F0; /* Tono lavanda pálido */
+  padding: 6rem 0;
+  background-color: var(--background-color);
+  position: relative;
 }
 
-.reviews-carousel-container {
-  overflow-x: auto; /* Permite el desplazamiento horizontal */
-  -webkit-overflow-scrolling: touch; /* Desplazamiento suave en iOS */
-  scroll-snap-type: x mandatory; /* Para un desplazamiento más controlado */
-  padding-bottom: 1rem; /* Espacio para la barra de desplazamiento */
+.reviews-marquee-container {
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+  padding: 20px 0;
+  mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
 }
 
-.reviews-row {
-  display: flex; /* Usa flexbox para las tarjetas */
-  flex-wrap: nowrap; /* Evita que las tarjetas salten de línea */
-  gap: 1.5rem; /* Espacio entre las tarjetas */
-  padding: 0 15px; /* Padding horizontal para que las tarjetas no toquen los bordes */
+.reviews-track {
+  display: flex;
+  gap: 30px;
+  width: max-content;
+  animation: scroll 40s linear infinite;
 }
 
-.reviews-row > .col-md-4 {
-  flex: 0 0 auto; /* Evita que las columnas se encojan */
-  width: 33.3333%; /* Ancho de cada tarjeta */
-  scroll-snap-align: start; /* Alinea las tarjetas al inicio al desplazarse */
+.reviews-track:hover {
+  animation-play-state: paused;
 }
 
-/* Ajustes para pantallas medianas (tablets) */
-@media (max-width: 991.98px) { /* Bootstrap's 'lg' breakpoint */
-  .reviews-row > .col-md-4 {
-    width: 50%; /* 2 columnas en tablets */
+.review-card-wrapper {
+  width: 350px;
+  flex-shrink: 0;
+}
+
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
   }
-}
 
-/* Ajustes para pantallas pequeñas (teléfonos) */
-@media (max-width: 767.98px) { /* Bootstrap's 'md' breakpoint */
-  .reviews-row > .col-md-4 {
-    width: 80%; /* 1 columna más ancha en teléfonos */
-  }
-}
-
-/* Ajustes para pantallas muy pequeñas (teléfonos pequeños) */
-@media (max-width: 575.98px) { /* Bootstrap's 'sm' breakpoint */
-  .reviews-row > .col-md-4 {
-    width: 90%; /* Casi ancho completo en teléfonos muy pequeños */
+  100% {
+    transform: translateX(-50%);
   }
 }
 
 .review-card {
+  background: white;
   border: none;
-  border-radius: 15px;
-  background-color: #FFFCF7; /* Blanco cálido */
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+  border-radius: var(--radius-md);
+  padding: 2rem;
+  box-shadow: var(--shadow-md);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+  text-align: center;
+  position: relative;
   height: 100%;
+  overflow: visible;
 }
 
 .review-card:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+  transform: translateY(-10px);
+  box-shadow: var(--shadow-lg);
 }
 
 .review-card .card-body {
-  padding: 2rem;
+  padding: 2.5rem 2rem;
   display: flex;
   flex-direction: column;
-  position: relative;
+  align-items: center;
+  text-align: center;
 }
 
 .review-quote-icon {
   position: absolute;
-  top: 1rem;
-  left: 1.5rem;
-  font-size: 3rem;
-  color: #EAE6F0;
-  z-index: 0;
+  top: -20px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 40px;
+  height: 40px;
+  background-color: var(--secondary-color);
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  font-family: serif;
+  box-shadow: var(--shadow-md);
 }
 
 .stars-container {
-  margin-bottom: 1rem;
-  z-index: 1;
-}
-
-.stars-container svg {
-  color: #D4AF37; /* Dorado brillante para las estrellas */
+  margin-bottom: 1.5rem;
+  color: var(--secondary-color);
 }
 
 .review-text {
-  font-family: 'Lato', sans-serif;
+  font-family: var(--font-secondary);
   font-size: 1rem;
   font-style: italic;
-  color: #555;
+  color: var(--text-light);
   margin-bottom: 1.5rem;
   line-height: 1.6;
-  flex-grow: 1; /* Asegura que el texto empuje el nombre hacia abajo */
-  z-index: 1;
 }
 
 .review-name {
-  font-family: 'Playfair Display', serif;
+  font-family: var(--font-primary);
   font-weight: 700;
   font-size: 1.1rem;
-  color: #333;
-  text-align: right;
-  z-index: 1;
+  color: var(--text-color);
+  margin-top: auto;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .reviews-row>.col-md-4 {
+    width: 85vw;
+  }
 }

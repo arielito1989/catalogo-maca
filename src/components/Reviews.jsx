@@ -26,33 +26,26 @@ const Reviews = ({ reviews, addReview }) => {
     <div id="reviews" className="reviews-section">
       <Container>
         <h2 className="text-center my-5">Lo que dicen nuestros clientes</h2>
-        <div className="reviews-carousel-container">
-          <motion.div 
-            className="reviews-row"
-            variants={containerVariants}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, amount: 0.5 }}
-          >
-            <AnimatePresence>
-              {reviews.map((review) => (
-                <motion.div key={review.id} variants={itemVariants} className="col-md-4 mb-4 h-100">
-                  <Card className="review-card h-100">
-                    <Card.Body>
-                      <div className="review-quote-icon">“</div>
-                      <div className="stars-container">
-                        {[...Array(review.stars)].map((_, i) => (
-                          <FaStar key={i} color="var(--secondary-color)" />
-                        ))}
-                      </div>
-                      <Card.Text className="review-text">"{review.review}"</Card.Text>
-                      <Card.Title className="review-name">- {review.name}</Card.Title>
-                    </Card.Body>
-                  </Card>
-                </motion.div>
-              ))}
-            </AnimatePresence>
-          </motion.div>
+        <div className="reviews-marquee-container">
+          <div className="reviews-track">
+            {/* Duplicamos las reseñas para el efecto infinito */}
+            {[...reviews, ...reviews].map((review, index) => (
+              <div key={`${review.id}-${index}`} className="review-card-wrapper">
+                <Card className="review-card h-100">
+                  <Card.Body>
+                    <div className="review-quote-icon">“</div>
+                    <div className="stars-container">
+                      {[...Array(review.stars)].map((_, i) => (
+                        <FaStar key={i} color="var(--secondary-color)" />
+                      ))}
+                    </div>
+                    <Card.Text className="review-text">"{review.review}"</Card.Text>
+                    <Card.Title className="review-name">- {review.name}</Card.Title>
+                  </Card.Body>
+                </Card>
+              </div>
+            ))}
+          </div>
         </div>
         {/* Añadir el formulario de reseñas debajo de las reseñas existentes */}
         <Row className="justify-content-center">

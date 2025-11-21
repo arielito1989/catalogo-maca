@@ -1,0 +1,121 @@
+.instagram-feed-section {
+    padding: 4rem 0;
+    background-color: var(--background-color);
+    text-align: center;
+}
+
+.instagram-title {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.8rem;
+    color: var(--primary-color);
+    margin-bottom: 0.5rem;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+.instagram-handle {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.2rem;
+    color: var(--secondary-color);
+    margin-bottom: 2.5rem;
+    display: block;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.instagram-handle:hover {
+    color: var(--primary-color);
+}
+
+.instagram-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    /* 2 columns on mobile */
+    gap: 10px;
+    max-width: 1200px;
+    margin: 0 auto 3rem auto;
+    padding: 0 15px;
+}
+
+@media (min-width: 768px) {
+    .instagram-grid {
+        grid-template-columns: repeat(3, 1fr);
+        /* 3 columns on tablet */
+    }
+}
+
+@media (min-width: 992px) {
+    .instagram-grid {
+        grid-template-columns: repeat(6, 1fr);
+        /* 6 columns on desktop */
+    }
+}
+
+.instagram-item {
+    position: relative;
+    overflow: hidden;
+    aspect-ratio: 1 / 1;
+    /* Square images */
+    cursor: pointer;
+    border-radius: 8px;
+    /* Soft rounded corners */
+}
+
+.instagram-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.instagram-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.instagram-icon {
+    color: white;
+    font-size: 2rem;
+}
+
+/* Hover Effects */
+.instagram-item:hover .instagram-overlay {
+    opacity: 1;
+}
+
+.instagram-item:hover .instagram-image {
+    transform: scale(1.1);
+}
+
+.instagram-btn-container {
+    margin-top: 2rem;
+}
+
+.instagram-btn {
+    display: inline-block;
+    padding: 12px 30px;
+    background-color: transparent;
+    color: var(--primary-color);
+    border: 1px solid var(--primary-color);
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    border-radius: 4px;
+}
+
+.instagram-btn:hover {
+    background-color: var(--primary-color);
+    color: white;
+}

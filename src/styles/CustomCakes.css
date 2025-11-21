@@ -1,179 +1,137 @@
 .custom-cakes-section {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 4rem 2rem;
-    background: linear-gradient(to right, #ffdde1, #ee9ca7);
-    border-radius: 20px;
-    margin: 2rem 0;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-    overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 6rem 2rem;
+  background: linear-gradient(135deg, #FDFBF7 0%, #F2EBE5 100%);
+  border-radius: var(--radius-lg);
+  margin: 4rem 0;
+  box-shadow: var(--shadow-sm);
+  overflow: hidden;
+  position: relative;
+}
+
+.custom-cakes-content {
+  flex: 1;
+  padding-right: 4rem;
+  text-align: left;
+  z-index: 1;
+}
+
+.custom-cakes-title {
+  font-family: var(--font-primary);
+  font-size: 3rem;
+  font-weight: 700;
+  color: var(--text-color);
+  margin-bottom: 1.5rem;
+  line-height: 1.2;
+}
+
+.custom-cakes-description {
+  font-family: var(--font-secondary);
+  font-size: 1.1rem;
+  color: var(--text-light);
+  margin-bottom: 2.5rem;
+  line-height: 1.8;
+}
+
+.custom-cakes-cta {
+  display: inline-flex;
+  align-items: center;
+  padding: 12px 30px;
+  background-color: var(--primary-color);
+  color: white;
+  font-family: var(--font-secondary);
+  font-size: 1rem;
+  font-weight: 600;
+  text-decoration: none;
+  border-radius: 50px;
+  transition: var(--transition-normal);
+  box-shadow: 0 4px 15px rgba(212, 140, 157, 0.4);
+}
+
+.custom-cakes-cta:hover {
+  background-color: var(--primary-dark);
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(212, 140, 157, 0.6);
+  color: white;
+}
+
+.custom-cakes-gallery {
+  flex: 1.2;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  padding: 1rem;
+}
+
+.gallery-image {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-md);
+  transition: var(--transition-normal);
+  cursor: pointer;
+}
+
+.gallery-image:hover {
+  transform: scale(1.03) translateY(-5px);
+  box-shadow: var(--shadow-lg);
+}
+
+/* Responsive */
+@media (max-width: 991.98px) {
+  .custom-cakes-section {
+    flex-direction: column;
+    padding: 4rem 1.5rem;
+    text-align: center;
   }
-  
+
   .custom-cakes-content {
-    flex: 1;
-    padding-right: 2rem;
-    text-align: left;
+    padding-right: 0;
+    margin-bottom: 3rem;
+    text-align: center;
   }
-  
+
   .custom-cakes-title {
-    font-size: 2.8rem;
-    font-weight: bold;
-    color: #333;
-    margin-bottom: 1rem;
-    line-height: 1.2;
-  }
-  
-  .custom-cakes-description {
-    font-size: 1.2rem;
-    color: #555;
-    margin-bottom: 2rem;
-  }
-  
-  .custom-cakes-cta {
-    display: inline-block;
-    padding: 1rem 2rem;
-    background-color: #ff69b4;
-    color: white;
-    font-size: 1.1rem;
-    font-weight: bold;
-    text-decoration: none;
-    border-radius: 50px;
-    transition: background-color 0.3s ease, transform 0.3s ease;
-  }
-  
-  .custom-cakes-cta:hover {
-    background-color: #ff1493;
-    transform: translateY(-3px);
-  }
-  
-  .custom-cakes-gallery {
-    flex: 1;
-    display: grid;
-    grid-template-columns: repeat(3, 1fr); /* 3 columnas para más imágenes */
-    gap: 1.5rem; /* Aumenta el espacio entre imágenes */
-    padding: 1rem; /* Añade un poco de padding */
-    /* transform: rotate(5deg); */ /* Eliminado para una apariencia más limpia */
-  }
-  
-  .gallery-image {
-    width: 100%;
-    height: 200px; /* Altura fija para uniformidad */
-    object-fit: cover; /* Asegura que las imágenes cubran el espacio */
-    border-radius: 15px;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease;
-  }
-  
-  .gallery-image:hover {
-    transform: scale(1.05);
-  }
-
-  /* Ajustes para pantallas medianas (tablets) */
-  @media (max-width: 991.98px) { /* Bootstrap's 'lg' breakpoint */
-    .custom-cakes-section {
-      flex-direction: column; /* Apila el contenido y la galería */
-      padding: 3rem 1rem;
-    }
-    .custom-cakes-content {
-      padding-right: 0;
-      margin-bottom: 2rem;
-      text-align: center;
-    }
-    .custom-cakes-title {
-      font-size: 2.2rem;
-    }
-    .custom-cakes-description {
-      font-size: 1rem;
-    }
-    .custom-cakes-gallery {
-      grid-template-columns: repeat(2, 1fr); /* 2 columnas en tablets */
-      gap: 1rem;
-    }
-    .gallery-image {
-      height: 180px;
-    }
-  }
-
-  /* Ajustes para pantallas pequeñas (teléfonos) */
-  @media (max-width: 767.98px) { /* Bootstrap's 'md' breakpoint */
-    .custom-cakes-title {
-      font-size: 1.8rem;
-    }
-    .custom-cakes-description {
-      font-size: 0.9rem;
-    }
-    .custom-cakes-cta {
-      padding: 0.8rem 1.5rem;
-      font-size: 0.9rem;
-    }
-    .custom-cakes-gallery {
-      grid-template-columns: repeat(1, 1fr); /* 1 columna en teléfonos */
-      gap: 0.8rem;
-    }
-    .gallery-image {
-      height: 150px;
-    }
-  }
-
-  /* Estilos para el modal de imagen de tortas personalizadas */
-  .modal-content {
-    background-color: #2c2c2c; /* Gris carbón oscuro */
-    color: #f5f5dc; /* Crema suave para el texto */
-    border-radius: 10px;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
-    animation: fadeInScale 0.3s ease-out; /* Animación de aparición */
-  }
-
-  .modal-header {
-    border-bottom: 1px solid #444; /* Borde más oscuro */
-  }
-
-  .modal-title {
-    color: #f5f5dc; /* Color del título */
-  }
-
-  .btn-close {
-    filter: invert(1); /* Invierte el color para que sea visible en fondo oscuro */
-  }
-
-  .carousel-control-prev,
-  .carousel-control-next {
-    width: 5%;
-    opacity: 0.7;
-    transition: opacity 0.2s ease-in-out, transform 0.2s ease-in-out;
-  }
-
-  .carousel-control-prev:hover,
-  .carousel-control-next:hover {
-    opacity: 1;
-    transform: scale(1.1);
-  }
-
-  .carousel-control-prev-icon,
-  .carousel-control-next-icon {
-    background-image: none;
     font-size: 2.5rem;
-    color: #f5f5dc;
-    text-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
   }
 
-  .carousel-control-prev-icon::before {
-    content: '‹';
+  .custom-cakes-gallery {
+    width: 100%;
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 576px) {
+  .custom-cakes-gallery {
+    grid-template-columns: repeat(1, 1fr);
   }
 
-  .carousel-control-next-icon::before {
-    content: '›';
+  .gallery-image {
+    height: 250px;
   }
+}
 
-  @keyframes fadeInScale {
-    from {
-      opacity: 0;
-      transform: scale(0.9);
-    }
-    to {
-      opacity: 1;
-      transform: scale(1);
-    }
-  }
-  
+/* Modal Styles */
+.modal-content {
+  background-color: var(--background-color);
+  border: none;
+  border-radius: var(--radius-md);
+}
+
+.modal-header {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+  background-color: white;
+  border-radius: var(--radius-md) var(--radius-md) 0 0;
+}
+
+.modal-title {
+  font-family: var(--font-primary);
+  color: var(--text-color);
+}
+
+.btn-close {
+  opacity: 0.5;
+}

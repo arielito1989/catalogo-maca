@@ -1,15 +1,12 @@
-
 .hero-section {
   position: relative;
-  min-height: 100vh;
+  height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
   color: white;
   text-align: center;
   overflow: hidden;
-  font-family: 'Lato', sans-serif;
-  clip-path: polygon(0 0, 100% 0, 100% 75%, 0 100%);
 }
 
 .hero-video {
@@ -29,7 +26,7 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(40, 25, 15, 0.6); /* Tono café oscuro semitransparente */
+  background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.5));
   z-index: 0;
 }
 
@@ -37,91 +34,54 @@
   position: relative;
   z-index: 1;
   padding: 2rem;
-  max-width: 800px;
+  max-width: 900px;
 }
 
 .hero-title {
-  font-family: 'Playfair Display', serif;
-  font-size: 4.5rem;
+  font-family: var(--font-primary);
+  font-size: 5rem;
   font-weight: 700;
-  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
-  margin-bottom: 1rem;
+  margin-bottom: 1.5rem;
+  line-height: 1.1;
+  text-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
 }
 
 .hero-subtitle {
-  font-size: 1.6rem;
-  margin-bottom: 2.5rem;
-  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.6);
+  font-family: var(--font-secondary);
+  font-size: 1.4rem;
+  margin-bottom: 3rem;
   font-weight: 300;
+  letter-spacing: 1px;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
 }
 
 .hero-cta-button {
-  border: 2px solid white;
-  background-color: transparent;
+  background-color: var(--secondary-color);
+  border: none;
   color: white;
-  padding: 14px 35px;
-  font-size: 1.2rem;
-  font-weight: 700;
+  padding: 16px 40px;
+  font-size: 1.1rem;
+  font-weight: 600;
   border-radius: 50px;
-  transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease;
+  transition: var(--transition-normal);
   text-transform: uppercase;
-  letter-spacing: 1px;
+  letter-spacing: 2px;
+  box-shadow: 0 4px 15px rgba(197, 160, 101, 0.4);
 }
 
 .hero-cta-button:hover {
   background-color: white;
-  color: #4A3F3F;
+  color: var(--secondary-color);
   transform: translateY(-3px);
+  box-shadow: 0 8px 25px rgba(255, 255, 255, 0.3);
 }
 
-/* Ajustes para pantallas medianas (tablets) */
-@media (max-width: 991.98px) { /* Bootstrap's 'lg' breakpoint */
+@media (max-width: 768px) {
   .hero-title {
-    font-size: 3.5rem; /* Un poco más pequeño para tablets */
+    font-size: 3rem;
   }
-  .hero-subtitle {
-    font-size: 1.4rem;
-  }
-  .hero-cta-button {
-    padding: 12px 30px;
-    font-size: 1.1rem;
-  }
-}
 
-/* Ajustes para pantallas pequeñas (teléfonos) */
-@media (max-width: 767.98px) { /* Bootstrap's 'md' breakpoint */
-  .hero-section {
-    min-height: 70vh; /* Reduce la altura mínima en móviles */
-    clip-path: none; /* Elimina el clip-path en móviles para evitar recortes */
-  }
-  .hero-title {
-    font-size: 2.5rem; /* Tamaño de fuente más pequeño para teléfonos */
-    margin-bottom: 0.8rem;
-  }
   .hero-subtitle {
     font-size: 1.1rem;
-    margin-bottom: 1.5rem;
-  }
-  .hero-cta-button {
-    padding: 10px 25px;
-    font-size: 0.9rem;
-  }
-  .hero-content {
-    padding: 1rem; /* Reduce el padding en móviles */
   }
 }
-
-/* Ajustes para pantallas muy pequeñas (teléfonos pequeños) */
-@media (max-width: 575.98px) { /* Bootstrap's 'sm' breakpoint */
-  .hero-title {
-    font-size: 2rem;
-  }
-  .hero-subtitle {
-    font-size: 0.9rem;
-  }
-  .hero-cta-button {
-    padding: 8px 20px;
-    font-size: 0.8rem;
-  }
-}
-

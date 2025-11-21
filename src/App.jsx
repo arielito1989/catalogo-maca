@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Header from './components/Header';
 import Hero from './components/Hero';
+import About from './components/About';
 import ProductCard from './components/ProductCard';
 import Reviews from './components/Reviews';
 import Footer from './components/Footer';
@@ -10,6 +11,7 @@ import ScrollAnimation from './components/ScrollAnimation';
 import CustomCakes from './components/CustomCakes';
 import WhatsAppButton from './components/WhatsAppButton';
 import ProductModal from './components/ProductModal'; // Importar el modal
+import InstagramFeed from './components/InstagramFeed';
 import './styles/App.css';
 import { Container, Row, Col } from 'react-bootstrap';
 
@@ -38,11 +40,11 @@ const initialReviews = [
 
 const sectionAnimation = {
   hidden: { opacity: 0, y: 50 },
-  visible: { 
-    opacity: 1, 
+  visible: {
+    opacity: 1,
     y: 0,
-    transition: { 
-      duration: 0.8, 
+    transition: {
+      duration: 0.8,
       ease: "easeOut"
     }
   }
@@ -107,10 +109,15 @@ function App() {
     <div className="App">
       <Header />
       <Hero />
+
+      <ScrollAnimation animation={sectionAnimation}>
+        <About />
+      </ScrollAnimation>
+
       <Container id="catalog" className="my-5">
         <h2 className="text-center display-4 font-weight-bold">Nuestro Catálogo</h2>
         <p className="text-center text-muted mb-5">Hecho con amor, directo a tu mesa.</p>
-        
+
         {Object.entries(productsData).map(([category, products]) => (
           <ScrollAnimation key={category} animation={sectionAnimation}>
             <div className="mb-5">
@@ -126,7 +133,7 @@ function App() {
           </ScrollAnimation>
         ))}
       </Container>
-      
+
       <ScrollAnimation animation={sectionAnimation}>
         <CustomCakes />
       </ScrollAnimation>
@@ -134,11 +141,15 @@ function App() {
       <ScrollAnimation animation={sectionAnimation}>
         <Reviews reviews={reviews} addReview={addReview} />
       </ScrollAnimation>
-      
+
+      <ScrollAnimation animation={sectionAnimation}>
+        <InstagramFeed />
+      </ScrollAnimation>
+
       <ScrollAnimation animation={sectionAnimation}>
         <Footer />
       </ScrollAnimation>
-      
+
       <WhatsAppButton />
       <ScrollArrows />
 

@@ -1,15 +1,41 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&family=Playfair+Display:wght@700&display=swap');
 
 :root {
+  /* Typography */
   --font-primary: 'Playfair Display', serif;
   --font-secondary: 'Montserrat', sans-serif;
 
-  --primary-color: #E6A4B4;
-  --secondary-color: #D4AF37;
-  --background-color: #FFF8F0;
-  --text-color: #4B3F3F;
+  /* Color Palette - Premium Bakery */
+  --primary-color: #D48C9D;
+  /* Rosa viejo elegante */
+  --primary-dark: #B06D7E;
+  --secondary-color: #C5A065;
+  /* Dorado suave */
+  --accent-color: #8E7F7F;
+  /* Gris cálido para textos secundarios */
+
+  /* Backgrounds */
+  --background-color: #F0EBE5;
+  /* Beige cálido más oscuro para reducir brillo */
   --card-bg-color: #FFFFFF;
-  --footer-bg-color: #F7DED0;
+  --footer-bg-color: #F2EBE5;
+
+  /* Text */
+  --text-color: #4A4040;
+  /* Marrón muy oscuro, más suave que negro */
+  --text-light: #756B6B;
+
+  /* UI Elements */
+  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 8px 24px rgba(0, 0, 0, 0.08);
+  --shadow-lg: 0 16px 32px rgba(0, 0, 0, 0.1);
+  --radius-sm: 8px;
+  --radius-md: 16px;
+  --radius-lg: 24px;
+
+  /* Transitions */
+  --transition-fast: 0.2s ease;
+  --transition-normal: 0.3s ease;
 }
 
 body {
@@ -21,7 +47,12 @@ body {
   color: var(--text-color);
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   font-family: var(--font-primary);
 }
 

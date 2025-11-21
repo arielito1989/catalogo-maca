@@ -1,29 +1,44 @@
 .scroll-arrows {
   position: fixed;
   bottom: 100px;
-  right: 20px;
+  /* Above WhatsApp button */
+  right: 30px;
+  /* Aligned with WhatsApp button */
   display: flex;
   flex-direction: column;
-  gap: 10px;
-  z-index: 1000;
+  gap: 15px;
+  z-index: 999;
 }
 
 .scroll-arrow {
-  background-color: rgba(0, 0, 0, 0.5);
-  color: white;
-  border: none;
+  background-color: rgba(255, 255, 255, 0.8);
+  /* Glassy white */
+  color: var(--secondary-color);
+  /* Gold icon */
+  border: 1px solid rgba(197, 160, 101, 0.3);
   border-radius: 50%;
-  width: 50px;
-  height: 50px;
+  width: 40px;
+  height: 40px;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 1.5rem;
+  font-size: 1.2rem;
   cursor: pointer;
-  transition: background-color 0.2s ease-in-out, transform 0.2s ease-in-out;
+  backdrop-filter: blur(5px);
+  box-shadow: var(--shadow-sm);
+  transition: all 0.3s ease;
 }
 
 .scroll-arrow:hover {
-  background-color: rgba(0, 0, 0, 0.8);
-  transform: scale(1.1);
+  background-color: var(--secondary-color);
+  color: white;
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+
+@media (max-width: 768px) {
+  .scroll-arrows {
+    right: 20px;
+    bottom: 90px;
+  }
 }
